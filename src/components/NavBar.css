@@ -1,0 +1,14 @@
+.btn-item {
+    color: white!important;
+    font-size: large;
+    padding-right: 2rem!important;
+    padding-left: 2rem!important;
+    font-weight: bold;
+}
+
+.btn-item:hover{
+    background-color: black;
+    border-radius:5px ;
+    
+}
+
