@@ -1,0 +1,23 @@
+
+.container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 255, 255);
+    margin-top: 50px;
+    min-height: 100vh;
+    min-width: 100vw;
+ 
+}
+
+.bienvenidos{
+
+        box-sizing: border-box;
+        text-align: center!important;
+        margin-top: 0;
+        width: 200;
+        color: rgb(165, 44, 124)!important;
+       
+
+}

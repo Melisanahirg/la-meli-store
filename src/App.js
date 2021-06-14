@@ -1,13 +1,17 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import { NavBar } from './components/NavBar';
+import { NavBar } from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+
 
 function App() {
+const saludo = {name:'Bienvenidos!'};
   return (
-    <div>
+    <div className="App-div">
       <NavBar/>
-      <h1>Contenido</h1>
+      
+      <ItemListContainer productData={saludo} />
     </div>
   );
 }

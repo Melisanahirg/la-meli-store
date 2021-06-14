@@ -1,5 +1,5 @@
 .btn-item {
-    color: white!important;
+    color: rgb(165, 44, 124)!important;
     font-size: large;
     padding-right: 2rem!important;
     padding-left: 2rem!important;
@@ -7,8 +7,7 @@
 }
 
 .btn-item:hover{
-    background-color: black;
+    background-color: rgb(241, 208, 240);
     border-radius:5px ;
     
 }
-
