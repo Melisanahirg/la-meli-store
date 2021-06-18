@@ -21,7 +21,7 @@ export const Cards = ({name, price, stock, initial}) => {
                 <Card.Text>
                      stock: {stock}
                 </Card.Text>
-                <ItemCount stock={stock} initial={initial} onAdd={onAdd} />
+                <ItemCount stock={stock} initial={initial} />
             </Card.Body>
         </Card>
     );
