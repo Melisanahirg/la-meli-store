@@ -10,7 +10,6 @@ const saludo = {name:'Bienvenidos!'};
   return (
     <div className="App-div">
       <NavBar/>
-      
       <ItemListContainer productData={saludo} />
     </div>
   );
