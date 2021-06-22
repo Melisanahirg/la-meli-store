@@ -1,28 +1,25 @@
 import React from "react";
-import { Card } from 'react-bootstrap';
+import { Card, CardDeck, Col } from 'react-bootstrap';
 import { ItemCount } from "../ItemCount/ItemCount";
+import './Cards.css';
 
 
-export const Cards = ({name, price, stock, initial}) => {
+export const Cards = ({ title, price, img }) => {
 
-    
+
 
     return (
-
-        <Card style={{ width: '18rem'}}>
-            <Card.Img variant="top" src="holder.js/100px180" />
-            <Card.Body >
-                <Card.Title> 
-                    {name} 
-                </Card.Title>
-                <Card.Text>
-                    ${price}
-                </Card.Text>
-                <Card.Text>
-                     stock: {stock}
-                </Card.Text>
-                <ItemCount stock={stock} initial={initial} />
-            </Card.Body>
-        </Card>
+        <Col md={4} className="mb-4">
+            <CardDeck className="ProductCard">
+                <Card>
+                    <Card.Img variant="top" src={img} />
+                    <Card.Body>
+                        <Card.Title>{title}</Card.Title>
+                        <Card.Text>${price}</Card.Text>
+                    </Card.Body>
+                </Card>
+                {/* <ItemCount stock={stock} initial={initial} /> */}
+            </CardDeck>
+        </Col>
     );
 }
