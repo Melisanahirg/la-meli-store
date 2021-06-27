@@ -1,0 +1,18 @@
+.itemDetail{
+
+    min-height: 50vh!important;
+    min-width: 100vw!important;
+    text-align: center!important;
+    box-sizing: border-box;
+    margin-top: 50px;
+    margin-left: 20px;
+    
+        
+
+}
+
+.cardStyle {
+
+    border-style: none;
+
+}
