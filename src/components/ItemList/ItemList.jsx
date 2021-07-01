@@ -1,9 +1,9 @@
 import React from "react";
-import { Card, CardDeck, Col } from 'react-bootstrap';
-import { ItemCount } from "../ItemCount/ItemCount";
+import {Card, CardDeck, Col, Button } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import './ItemList.css';
 
-export const ItemList = ({ title, price, img }) => {
+export const ItemList = ({ title, price, img, id }) => {
 
     return (
         <Col lg={3}>
@@ -13,6 +13,7 @@ export const ItemList = ({ title, price, img }) => {
                     <Card.Body>
                         <Card.Title>{title}</Card.Title>
                         <Card.Title>${price}</Card.Title>
+                        <Link to={`/item/${id}`}><Button className='btnVerInfo'>Ver info</Button></Link>
                     </Card.Body>
                 </Card>
             </CardDeck>

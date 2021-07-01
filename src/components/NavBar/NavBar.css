@@ -3,7 +3,7 @@
     font-size: large;
     padding-right: 2rem!important;
     padding-left: 2rem!important;
-    font-weight: bold;
+    font-weight: bold;;
 }
 
 .btn-item:hover{
@@ -11,3 +11,4 @@
     border-radius:5px ;
     
 }
+

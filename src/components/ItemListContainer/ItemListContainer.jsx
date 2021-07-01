@@ -1,30 +1,33 @@
-import './ItemListContainer.css';
 import { ItemList } from '../ItemList/ItemList';
-import { Container, Row, Col } from 'react-bootstrap';
-import { useState, useEffect,  } from 'react';
+import { Container, Row} from 'react-bootstrap';
+import { useState, useEffect, } from 'react';
+import { useParams } from 'react-router';
+import '../../styles/globalstyles.css'
 
 
 
 export function ItemListContainer() {
 
-    async function getProducts(categorias) {
-        const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=
-        ${categorias}`);
-        const data = await response.json();
-        return data.results
-    }
-
+    let { categoryId } = useParams()
     let [products, setProducts] = useState([]);
 
     useEffect(() => {
 
+        async function getProducts(category) {
+            const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${category}`);
+            const data = await response.json();
+            return data.results
+        }
+
         const awaitForData = async () => {
-            let data = await getProducts('teclado y mouse rosa');
+            { categoryId = !categoryId ? 'mouse y teclado rosa' : categoryId }
+            let data = await getProducts(categoryId);
             let aux = data.map(element => {
                 return {
                     title: element.title,
                     img: element.thumbnail,
                     price: element.price,
+                    id: element.id
                 }
             });
 
@@ -34,7 +37,10 @@ export function ItemListContainer() {
 
         awaitForData();
 
-    }, [])
+    }, [categoryId])
+
+
+
 
 
     return (
@@ -42,7 +48,7 @@ export function ItemListContainer() {
             <Row>
                 {products.map((element, index) => {
                     return (
-                        <ItemList key={index} title={element.title} price={element.price} img={element.img} />
+                        <ItemList key={index} title={element.title} price={element.price} img={element.img} id={element.id} />
                     )
                 })}
             </Row>
