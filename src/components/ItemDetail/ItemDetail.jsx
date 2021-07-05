@@ -9,12 +9,13 @@ import '../../styles/globalstyles.css'
 export const ItemDetail = ({ title, price, img, stock }) => {
 
     const [count, setCount] = useState()
-    console.log('count', count)
+    
     function onAdd(productCount) {
         setCount(productCount)
         
     }
-
+    
+    console.log('Productos:', count)
 
     return (
 
