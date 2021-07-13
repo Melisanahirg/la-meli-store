@@ -3,7 +3,7 @@ import {Card, CardDeck, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './ItemList.css';
 
-export const ItemList = ({ title, price, img, id }) => {
+export const ItemList = ({ title, price, img, id}) => {
 
     return (
         <Col lg={3}>

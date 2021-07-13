@@ -7,24 +7,28 @@ import { ItemListContainer } from './components/ItemListContainer/ItemListContai
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { CartWidget } from './components/CartWidget/CartWidget';
+import { CartContextComponent} from './context/CartContext'
 
 
 
 function App() {
 
   return (
-    <BrowserRouter>
-      <NavBar/>
-      <Switch>
-        <div className="App-div">
-          <h1 className="bienvenidos">Bienvenidos!</h1>
-          <Route exact path='/' component={ItemListContainer} />
-          <Route exact path='/category/:categoryId' component={ItemListContainer} />
-          <Route exact path='/item/:itemId' component={ItemDetailContainer} />
-          <Route exact path='/cart' component={CartWidget} />
-        </div>
-      </Switch>
-    </BrowserRouter>
+    
+    <CartContextComponent>
+      <BrowserRouter>
+        <NavBar/>
+        <Switch>
+          <div className="App-div">
+            <h1 className="bienvenidos">Bienvenidos!</h1>
+            <Route exact path='/' component={ItemListContainer} />
+            <Route exact path='/category/:categoryId' component={ItemListContainer} />
+            <Route exact path='/item/:productId' component={ItemDetailContainer} />
+            <Route exact path='/cart' component={CartWidget} />
+          </div>
+        </Switch>
+      </BrowserRouter>
+    </CartContextComponent>
   );
 }
 
