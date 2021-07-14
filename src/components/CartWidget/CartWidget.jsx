@@ -1,15 +1,49 @@
-import {Nav, Image } from 'react-bootstrap';
+import { Table, Button } from 'react-bootstrap';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 
+export function CartWidget({ removeItem }) {
 
+  let { cart, cartTotal} = useContext(CartContext)
 
-export function CartWidget() {
+  return (
+    <>
+      <Table striped bordered hover>
+        <thead>
+          <tr>
+            <th>Imagen</th>
+            <th>Producto</th>
+            <th>Precio Un.</th>
+            <th>Cantidad</th>
+            <th>Total</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
 
-    return (
-        <>
-          <Nav.Link href="/cart" className="btn-item">Mi carrito <Image src="/images/micarrito.png" style={{width:40, padding:3}}/></Nav.Link>  
-
-        </>
-    );
+          {cart.map((row) => {
+            return (
+              <tr>
+                <td><img src={row.item.thumbnail}></img></td>
+                <td>{row.item.title}</td>
+                <td>${row.item.price}</td>
+                <td>{row.quantity}</td>
+                <td>${row.item.price * row.quantity}</td>
+                <td><Button onClick={() => removeItem(row.item.id)}>Borrar</Button></td>
+              </tr>
+            )
+          })}
+          <tr>
+            <td></td>
+            <td colSpan="3">Total</td>
+            <td>${cartTotal}</td>
+          </tr>
+        </tbody>
+      </Table>
+    </>
+  )
 
 }
+
+

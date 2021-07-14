@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { Button, Row, Col, Container, Card } from 'react-bootstrap';
+import { Link } from "react-router-dom";
 import { CartContext } from "../../context/CartContext";
 import '../../styles/globalstyles.css'
 
 
 
-export function ItemCount({ stock, onAdd, removeItem, productId }) {
+export function ItemCount({ stock, onAdd }) {
     
     
     const [productCount, setProductCount] = useState(1);
@@ -37,10 +38,10 @@ export function ItemCount({ stock, onAdd, removeItem, productId }) {
                 </Row>
                 <Row>
                     <Col>
-                        <Button onClick={() => onAdd(productCount)}  className='btnComprar'>Comprar</Button>
-                    </Col>
-                    <Col>
-                        <Button onClick={() => removeItem(productId)}  className='btnComprar'>Borrar</Button>
+                        <Button onClick={() => onAdd(productCount)}  className='btnComprar'>Agregar</Button>
+                        <Link to='/cart'>
+                            <Button className='btnComprar'>Terminar compra</Button>
+                        </Link>
                     </Col>
                 </Row>
             </Row>

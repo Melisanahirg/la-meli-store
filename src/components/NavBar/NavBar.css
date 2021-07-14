@@ -11,4 +11,7 @@
     border-radius:5px ;
     
 }
-
+.cartBadge{
+    background-color: orange;
+    color: white;
+}

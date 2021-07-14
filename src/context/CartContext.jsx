@@ -46,9 +46,9 @@ export const CartContextComponent = ({ children }) => {
 
     const removeItem = id => {
         let newCart = cart.filter(product => product.item.id != id);
-        console.log('newCart', newCart);
         setCart(newCart);
     }
+
     
     
     const addToCart = (item, quantity) =>{
@@ -63,8 +63,8 @@ export const CartContextComponent = ({ children }) => {
             setCart(prev => [...prev, {...{item}, quantity}])
         }
     };
-
-
+    
+    
 
 
     useEffect(() => {
@@ -78,16 +78,19 @@ export const CartContextComponent = ({ children }) => {
 
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart));
-        console.log('corre useeffect', cart);
     }, [cart]);
 
 
-           
+    let itemCount = cart.reduce((a, b) => a + (b['quantity'] || 0), 0);
+
+    let cartTotal = cart.reduce((a, b) => a + (b['item']['price'] * b['quantity'] || 0), 0);
+    
+
             
             
     return (
-        <CartContext.Provider value={{ addToCart, listProduct, setCategory, product, setProductId, cart, clearCart, addToCart, removeItem}}>
+        <CartContext.Provider value={{ addToCart, listProduct, setCategory, product, setProductId, cart, clearCart, removeItem, itemCount, cartTotal}}>
             {children}
         </CartContext.Provider>
     )
-}
+ }

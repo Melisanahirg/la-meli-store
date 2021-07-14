@@ -8,7 +8,7 @@ import { CartContext } from '../../context/CartContext';
 
 
 export const ItemDetail = ({product}) => {
-    console.log(product)
+    
 
     let {cart, addToCart, removeItem} = useContext(CartContext)
 
