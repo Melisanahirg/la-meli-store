@@ -23,8 +23,8 @@ function App() {
           <div className="App-div">
             <h1 className="bienvenidos">Bienvenidos!</h1>
             <Route exact path='/' component={ItemListContainer} />
-            <Route exact path='/category/:categoryId' component={ItemListContainer} />
-            <Route exact path='/item/:productId' component={ItemDetailContainer} />
+            <Route exact path='/category/:category' component={ItemListContainer} />
+            <Route exact path='/item/:id' component={ItemDetailContainer} />
             <Route exact path='/cart' component={CartComponent}/>
           </div>
         </Switch>

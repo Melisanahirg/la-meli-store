@@ -25,8 +25,8 @@ export function CartWidget({ removeItem }) {
           {cart.map((row) => {
             return (
               <tr>
-                <td><img src={row.item.thumbnail}></img></td>
-                <td>{row.item.title}</td>
+                <td><img src={row.item.img}></img></td>
+                <td>{row.item.name}</td>
                 <td>${row.item.price}</td>
                 <td>{row.quantity}</td>
                 <td>${row.item.price * row.quantity}</td>

@@ -1,47 +1,33 @@
 import { createContext, useState, useEffect } from "react";
+import { getFirestore } from "../firabase/client";
 
 export const CartContext = createContext();
 
 export const CartContextComponent = ({ children }) => {
-    
-        let [categoryId, setCategory] = useState()
-        let [listProduct, setListProduct] = useState([]);
-    
-        let [productId, setProductId] = useState()
-        let [product, setProduct] = useState({});
-    
+
+    const [category, setCategory] = useState();
+    const [listProduct, setListProduct] = useState([]);
+
     useEffect(() => {
-        
-        async function getProduct(category) {
-            const response = await fetch(`https://api.mercadolibre.com/sites/MLA/search?q=${category}`);
-            const data = await response.json();
-            setListProduct(data.results)
-         }
+        async function getData() {
+            const DB = getFirestore(); //conexion a la base de datos 
+            const collection = DB.collection('productos') //Tomamos la coleccion
+            const response = category ? await collection.where('category', '==', category).get() : await collection.get()
+            setListProduct(response.docs.map(element => {
+                return {
+                    id: element.id,
+                    ...element.data()
+                }
+            }));
+        }
+        getData();
+    }, [category]);
+
     
-        !categoryId ? getProduct('mouse y teclado rosa') : getProduct(categoryId)
-         
-    }, [categoryId]);
-    
-    
-    useEffect(() => {
-        
-        async function getProductId() {
-            const response = await fetch(`https://api.mercadolibre.com/items/${productId}`);
-            const data = await response.json();
-            setProduct(data)
-         }
-         
-         getProductId(productId)
-         
-    }, [productId]);
-
-
-
-
     const [cart, setCart] = useState([])
-    
+
     const clearCart = () => setCart([])
-    
+
     const isInCart = id => cart.find(product => product.item.id === id);
 
     const removeItem = id => {
@@ -49,9 +35,9 @@ export const CartContextComponent = ({ children }) => {
         setCart(newCart);
     }
 
-    
-    
-    const addToCart = (item, quantity) =>{
+
+
+    const addToCart = (item, quantity) => {
         if (isInCart(item.id)) {
             const newCart = cart.map(cartElement => {
                 if (cartElement.item.id === item.id) {
@@ -60,20 +46,20 @@ export const CartContextComponent = ({ children }) => {
             })
             setCart(newCart);
         } else {
-            setCart(prev => [...prev, {...{item}, quantity}])
+            setCart(prev => [...prev, { ...{ item }, quantity }])
         }
     };
-    
-    
+
+
 
 
     useEffect(() => {
-        
+
         const localCart = localStorage.getItem('cart');
         !localCart ? localStorage.setItem('cart', JSON.stringify([])) : setCart(JSON.parse(localCart))
 
 
-         
+
     }, []);
 
     useEffect(() => {
@@ -81,16 +67,26 @@ export const CartContextComponent = ({ children }) => {
     }, [cart]);
 
 
-    let itemCount = cart.reduce((a, b) => a + (b['quantity'] || 0), 0);
+    const itemCount = cart.reduce((a, b) => a + (b['quantity'] || 0), 0);
 
-    let cartTotal = cart.reduce((a, b) => a + (b['item']['price'] * b['quantity'] || 0), 0);
-    
+    const cartTotal = cart.reduce((a, b) => a + (b['item']['price'] * b['quantity'] || 0), 0);
 
-            
-            
+
+
+    const realStock = (product) => {
+
+        const foundItem = cart.find((e) => e.item.id === product.id);
+
+        return foundItem ? product.stock - foundItem.quantity : product.stock;
+
+    }
+
+
+
+
     return (
-        <CartContext.Provider value={{ addToCart, listProduct, setCategory, product, setProductId, cart, clearCart, removeItem, itemCount, cartTotal}}>
+        <CartContext.Provider value={{ addToCart, listProduct, cart, clearCart, removeItem, itemCount, cartTotal, realStock, setCategory }}>
             {children}
         </CartContext.Provider>
     )
- }
+}

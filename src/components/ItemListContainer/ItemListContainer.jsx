@@ -1,29 +1,34 @@
 import { ItemList } from '../ItemList/ItemList';
-import { Container, Row} from 'react-bootstrap';
-import { useContext, useEffect, useState} from 'react';
-import { CartContext } from '../../context/CartContext';
-import { useParams } from 'react-router';
+import { Container, Row } from 'react-bootstrap';
 import '../../styles/globalstyles.css'
+import { useParams } from 'react-router-dom';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext'
 
 
 
 export function ItemListContainer() {
 
-    let { categoryId } = useParams()
-    let {listProduct, setCategory} = useContext(CartContext)
-    
-    setCategory(categoryId);
+    const { category } = useParams();
+
+    const { listProduct, setCategory } = useContext(CartContext);
+
+    setCategory(category);
+
+    console.log(listProduct)
 
     return (
-        <Container className="meli-container">
+
+
+        <Container>
             <Row>
                 {listProduct.map((element, id) => {
                     return (
-                        <ItemList key={id} title={element.title} price={element.price} img={element.thumbnail} id={element.id} />
+                        <ItemList key={id} name={element.name} price={element.price} img={element.img} id={element.id} />
                     )
                 })}
             </Row>
         </Container>
 
-    );
+    )
 }

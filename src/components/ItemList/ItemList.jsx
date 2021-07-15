@@ -3,7 +3,7 @@ import {Card, CardDeck, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './ItemList.css';
 
-export const ItemList = ({ title, price, img, id}) => {
+export const ItemList = ({ name, price, img, id}) => {
 
     return (
         <Col lg={3}>
@@ -11,7 +11,7 @@ export const ItemList = ({ title, price, img, id}) => {
                 <Card>
                     <Card.Img variant="top" src={img} />
                     <Card.Body>
-                        <Card.Title>{title}</Card.Title>
+                        <Card.Title>{name}</Card.Title>
                         <Card.Title>${price}</Card.Title>
                         <Link to={`/item/${id}`}><Button className='btnVerInfo'>Ver info</Button></Link>
                     </Card.Body>

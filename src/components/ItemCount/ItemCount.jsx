@@ -38,7 +38,7 @@ export function ItemCount({ stock, onAdd }) {
                 </Row>
                 <Row>
                     <Col>
-                        <Button onClick={() => onAdd(productCount)}  className='btnComprar'>Agregar</Button>
+                        <Button onClick={() => onAdd(productCount)} disabled={stock == 0} className='btnComprar'>Agregar</Button>
                         <Link to='/cart'>
                             <Button className='btnComprar'>Terminar compra</Button>
                         </Link>
