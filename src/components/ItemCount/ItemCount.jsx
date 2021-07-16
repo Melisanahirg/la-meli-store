@@ -16,6 +16,7 @@ export function ItemCount({ stock, onAdd }) {
             setProductCount(productCount + 1)
         }
     }
+    
 
     const restar = () => {
         if (productCount > 1) {
@@ -40,7 +41,7 @@ export function ItemCount({ stock, onAdd }) {
                     <Col>
                         <Button onClick={() => onAdd(productCount)} disabled={stock == 0} className='btnComprar'>Agregar</Button>
                         <Link to='/cart'>
-                            <Button className='btnComprar'>Terminar compra</Button>
+                            <Button className='btnComprar'>Ir a carrito</Button>
                         </Link>
                     </Col>
                 </Row>

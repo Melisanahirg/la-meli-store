@@ -1,10 +1,10 @@
 import { useState, useContext } from 'react';
 import { Card, CardDeck, Button, Col } from 'react-bootstrap';
 import { ItemCount } from '../ItemCount/ItemCount'
-import { Link } from 'react-router-dom'
 import './ItemDetail.css'
 import '../../styles/globalstyles.css'
 import { CartContext } from '../../context/CartContext';
+
 
 
 export const ItemDetail = ({item}) => {

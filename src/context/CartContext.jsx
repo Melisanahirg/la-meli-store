@@ -69,8 +69,11 @@ export const CartContextComponent = ({ children }) => {
 
     const itemCount = cart.reduce((a, b) => a + (b['quantity'] || 0), 0);
 
-    const cartTotal = cart.reduce((a, b) => a + (b['item']['price'] * b['quantity'] || 0), 0);
 
+    const cartTotal = () => {
+    const total = cart.reduce((a, b) => a + (b['item']['price'] * b['quantity'] || 0), 0);
+    return total;
+    }   
 
 
     const realStock = (product) => {
@@ -80,7 +83,6 @@ export const CartContextComponent = ({ children }) => {
         return foundItem ? product.stock - foundItem.quantity : product.stock;
 
     }
-
 
 
 

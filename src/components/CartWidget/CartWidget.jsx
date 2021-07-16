@@ -37,7 +37,7 @@ export function CartWidget({ removeItem }) {
           <tr>
             <td></td>
             <td colSpan="3">Total</td>
-            <td>${cartTotal}</td>
+            <td>${cartTotal()}</td>
           </tr>
         </tbody>
       </Table>
