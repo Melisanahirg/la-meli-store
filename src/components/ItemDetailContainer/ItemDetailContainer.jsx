@@ -1,7 +1,7 @@
 import { ItemDetail } from '../ItemDetail/ItemDetail';
-import { Container, Row, Card } from 'react-bootstrap';
+import {Container, Card } from 'react-bootstrap';
 import '../../styles/globalstyles.css'
-import '../ItemDetail/ItemDetail.css'
+import '../ItemDetailContainer/ItemDetailContainer.css'
 import { useParams } from 'react-router';
 import { useState, useEffect } from 'react';
 import { getFirestore } from '../../firabase/client';
@@ -12,7 +12,6 @@ export function ItemDetailContainer() {
 
     const { id } = useParams()
     const [item, setItem] = useState([]);
-    const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
@@ -33,22 +32,17 @@ export function ItemDetailContainer() {
 
         })
             .catch(error => console.log(error))
-            .finally(() => {
-                setLoading(false)
-            })
-
     }, [id]);
 
 
     return (
-        <Container className="meli-container">
-            <Row className='rowGlobalItemDetail'>
+        <>
+            <Container className='container-detail-container'>
                 {item.status === 404 ? <Card.Title>Elemento no encontrado</Card.Title> :
                     <ItemDetail className="itemDetail" item={item} />
                 }
-
-            </Row>
-        </Container>
+            </Container>
+        </>
     );
 }
 

@@ -1,0 +1,11 @@
+.text-title{
+    font-size:40px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    margin-top: 50px;
+}
+
+.col-titleComponent{
+    display: flex;
+    justify-content:center;
+}

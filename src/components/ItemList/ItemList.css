@@ -1,11 +1,82 @@
-.ProductCard{
-    min-height: 450px;
-    padding-top: 30px;
-       
+.ProductCard{  
+    padding-left: 60px;
+    padding-right:80px;
+    padding-top: 60px;  
+    padding-bottom:60px;
 }
 
-.cardStyle {
+.cardStyle {   
+    border: none;  
+}
 
-    border-style: none;
+
+.card{
+    box-shadow: 30px 30px 8px rgba(0, 0, 0, 0.3)!important;
+    border: none;
+    border-radius: 20px ;
+    padding-bottom: 20px;
+}
+
+.card-img-top{
+    padding: 40px;
+}
+
+.card-body{
+   background-image: url(../../img/fondo-subtitle.jpg);
+}
+
+.card-title.h5 {
+    font-size: 30px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom:20px;
+    text-shadow: #e4e4e4 1px 3px 3px ;
+}
+
+.card-subtitle.h6 {
+    text-align: center;
+    font-family: 'Lora', serif;
+    margin-bottom:20px;
+}
+
+.disponible.card-subtitle.h6 {
+    background: inherit;
+    display: inline;
+    padding-top: 40px;
+    padding-right: 110px;
+    font-size: 15px;
+    font-family: 'Montserrat', sans-serif;
+    float: right;
 
 }
+
+.price.card-title.h5{
+    text-align: left;
+    font-size: 70px;
+    font-family: 'Bebas Neue', cursive;
+    display:inline;
+    padding-left: 20px;
+    
+}
+
+.info.btn.btn-primary{
+    background: rgb(219, 219, 219);
+    float: right;
+    color: black;
+    border-color: rgb(190, 190, 190);
+    margin-right:80px;
+    padding-left: 60px;
+    padding-right: 60px;
+}
+
+.link {
+    text-decoration: inherit;
+    color:inherit;  
+}
+.link:hover {
+    text-decoration: inherit;
+    color:inherit;  
+}
+
+
+

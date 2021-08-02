@@ -1,9 +1,45 @@
-.btn-item {
-    color: rgb(165, 44, 124)!important;
-    font-size: large;
-    padding-right: 2rem!important;
-    padding-left: 2rem!important;
-    font-weight: bold;;
+.brand{
+    width: 400px;
+    margin-left:20px; 
+}
+
+.btn-item, .btn-category {
+    font-family:'Montserrat', sans-serif;
+    color: rgb(156, 115, 168)!important;
+    transition: font-weight .3s, font-size .3s,color .3s;
+    font-size: 16px;
+    margin-top:5px;
+    margin-left: 20px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-weight: bold;
+    
+    
+}
+
+.btn-item.nav-link{
+    padding-top: 12px!important;
+    padding-bottom:12px;
+    margin-right:10px ;
+}
+
+.dropdown-toggle.nav-link{
+    padding-top: 12px!important;
+    padding-bottom:12px;
+}
+
+.dropdown-toggle{
+    color:rgb(156, 115, 168)!important;
+}
+
+.dropdown-menu {
+    top:55px;
+    right:10px;
+    width:212px;
+}
+
+.btn-category.dropdown-item{
+    margin-left: 0;
 }
 
 .btn-item:hover{
@@ -15,3 +51,14 @@
     background-color: orange;
     color: white;
 }
+
+
+
+.btn-category:hover{
+    font-size: 18px;
+    font-weight: bold;
+    color: rgb(143, 0, 119)!important;
+    background-color:transparent!important;
+    
+}
+  

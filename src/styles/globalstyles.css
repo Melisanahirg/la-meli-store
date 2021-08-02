@@ -7,57 +7,6 @@
     
 }
 
-.btnVerInfo{
-    background: rgb(241, 208, 240);
-    color: black;
-    border-color: violet;
-}
-
-.btnResta {
-    margin-bottom:16;
-    background: rgb(165, 44, 124)!important;
-    border-radius: 3px;
-    float: left;
-  
-}
-
-.btnSuma {
-    margin-bottom:16;
-    background: rgb(165, 44, 124)!important;
-    border-radius: 3px;
-    float: right;
-}
-
-.colResta {
-    padding:0!important;
-    display: grid;
-    width: 10%;
-}
-.colSuma {
-    padding:0!important;
-    display: grid;
-    width: 10%;
-}
-
-
-.rowGlobalCount {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    
-}
-
-.numberProduct{
-
-    height: 100%;
-    background: rgb(241, 208, 240);
-    padding:0!important;
-    margin: 0!important;
-    text-align: center;
-    border-radius: 5px;
-}
-
 .meli-container {
         background-color: rgb(255, 255, 255);
         margin-top: 50px;

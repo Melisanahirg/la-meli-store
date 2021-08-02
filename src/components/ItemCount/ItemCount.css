@@ -1,0 +1,85 @@
+.rowGlobalCount{ 
+    padding-top: 30px;
+    justify-content:center;
+}
+
+.rowNumberProduct {
+    width: 100%;
+}
+
+.btnComprar {
+    width:100%;
+    background: #cda9ac;
+    color: rgb(255, 255, 255); 
+    text-decoration: none!important;
+    border: none;
+    margin-top: 20px;
+    transition: background-color .3s;
+    font-family:'Montserrat', sans-serif;
+    
+}
+
+.btnComprar:hover {
+    background-color: rgb(156, 115, 168);
+}
+
+.btnSuma:hover{
+    background-color: rgb(156, 115, 168)!important;
+}
+
+.btnResta:hover{
+    background-color: rgb(156, 115, 168)!important;
+}
+
+.btnCarrito{
+    width:100%;
+    background: rgb(241, 208, 240);
+    color: rgb(255, 255, 255); 
+    text-decoration: none!important;
+    margin-top: 20px;
+}
+
+.numberProduct{
+    color: #585858;
+    height: 100%;
+    background: #dfc9ca;
+    padding:0!important;
+    margin: 0!important;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.btnResta {
+    margin-bottom:16;
+    background: #cda9ac!important;
+    border-radius: 3px;
+    float: left;
+    border: none;
+    transition: background-color .3s;
+  
+}
+
+.btnSuma {
+    margin-bottom:16;
+    background: #cda9ac!important;
+    border-radius: 3px;
+    float: right;
+    border: none;
+    transition: background-color .3s;
+}
+
+.colResta {
+    padding:0!important;
+    display: grid;
+    width: 10%;
+}
+.colSuma {
+    padding:0!important;
+    display: grid;
+    width: 10%;
+}
+
+.col-botton{
+    display:flex;
+    justify-content:center;
+}

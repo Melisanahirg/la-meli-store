@@ -31,7 +31,7 @@ export const CartContextComponent = ({ children }) => {
     const isInCart = id => cart.find(product => product.item.id === id);
 
     const removeItem = id => {
-        let newCart = cart.filter(product => product.item.id != id);
+        let newCart = cart.filter(product => product.item.id !== id);
         setCart(newCart);
     }
 

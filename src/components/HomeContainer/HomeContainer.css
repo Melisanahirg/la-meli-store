@@ -1,0 +1,64 @@
+.container-presentation {
+    max-width: 100%!important;
+    margin: 0;
+    padding: 0;
+
+}
+.row-presentation {
+    margin:0!important;
+    width: 100%!important;
+    height: 100%!important;
+}
+
+
+.col-presentation{
+
+    padding: 0!important;;
+
+}
+
+.image-presentation {
+
+    size: 100%!important;
+    
+
+}
+
+.title-pic{
+    font-family: 'Lora', serif;
+    font-size:80px;
+    color:rgb(82, 79, 81);
+}
+
+.subtitle-pic{
+    font-family: 'Lora', serif;
+    font-size:20px;
+    color:rgb(82, 79, 81);
+}
+
+.carousel-caption{
+        background-color: rgba(255, 255, 255, 0.308);
+        transform: translateY(-50%);
+        bottom: initial;
+        top: 50%;
+
+}
+
+.btnHome{
+    font-family:'Montserrat', sans-serif;
+    font-size:18px;
+    text-decoration: none!important;
+    border: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    transition: color 0.3s;
+    color: rgb(156, 115, 168); 
+    background-color: rgb(241, 208, 240); 
+    padding:10px;
+    border-radius:5px;
+    box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.4);
+}
+
+.btnHome:hover{
+    color: rgb(255, 255, 255); 
+    background-color:rgb(156, 115, 168);
+}

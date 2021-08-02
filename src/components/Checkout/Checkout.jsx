@@ -4,22 +4,24 @@ import Swal from 'sweetalert2';
 import { CartContext } from '../../context/CartContext';
 import { getFirestore } from '../../firabase/client';
 import firebase from 'firebase/app'
+import '../Checkout/Checkout.css'
 
-export const Checkout = () => {
+export const Checkout = ({handleClose}) => {
 
     const { cart, cartTotal, clearCart } = useContext(CartContext)
 
-    const [form, setForm] = useState({ email: "", name: "", phone: "" });
+    const [form, setForm] = useState({ email: "", name: "", phone: "" })
+
 
     async function actualizarStock(newOrder) {
 
         console.log(newOrder.pedido);
         const db = getFirestore();
 
-        const pokemonsActualizar = db.collection("productos")
+        const productosActualizar = db.collection("productos")
             .where(firebase.firestore.FieldPath.documentId(), 'in', newOrder.pedido.map(element => element.id));
 
-        const query = await pokemonsActualizar.get();
+        const query = await productosActualizar.get();
         const batch = db.batch();
         const outOfStock = [];
 
@@ -58,7 +60,7 @@ export const Checkout = () => {
             })
     }
 
-    function validarDatos() {
+   function validarDatos() {
         if (form.email.includes("@") && form.name !== null && form.phone !== null) {
 
             const newOrder = {
@@ -75,7 +77,9 @@ export const Checkout = () => {
                 fecha: (new Date()).toLocaleString(),
                 cartTotal: cartTotal()
             }
+
             dispatchOrder(newOrder);
+            handleClose();
 
         } else {
             Swal.fire("Ingrese datos válidos")
@@ -88,22 +92,20 @@ export const Checkout = () => {
             <Row className="mb-3">
                 <Form.Group as={Col} controlId="formGridEmail">
                     <Form.Label>Email</Form.Label>
-                    <Form.Control type="email" placeholder="Email" onInput={(e) => setForm({ ...form, email: e.target.value })} />
+                    <Form.Control type="email" onInput={(e) => setForm({ ...form, email: e.target.value })} />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Nombre </Form.Label>
-                    <Form.Control type="text" placeholder="Nombre" onInput={(e) => setForm({ ...form, name: e.target.value })} />
+                    <Form.Control type="text" onInput={(e) => setForm({ ...form, name: e.target.value })} />
                 </Form.Group>
 
                 <Form.Group as={Col} controlId="formGridPassword">
                     <Form.Label>Teléfono</Form.Label>
-                    <Form.Control type="number" placeholder="Teléfono" onInput={(e) => setForm({ ...form, phone: e.target.value })} />
+                    <Form.Control type="number" onInput={(e) => setForm({ ...form, phone: e.target.value })} />
                 </Form.Group>
-
             </Row>
-            <Button variant="primary" onClick={validarDatos} size="sm">
-                Finalizar compra
+            <Button className="btnFinish" onClick={validarDatos} size="sm">Finalizar compra
             </Button>
         </Form>
     )

@@ -1,0 +1,80 @@
+.img-cart{
+    width:100px;
+}
+
+.col-title{
+    padding-top: 15px;
+}
+
+.col-titlecart{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+.cart-title{
+    font-size:70px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 200;
+}
+
+.th-titles{
+    
+    justify-content:center;
+}
+
+.tr-title{
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tr-product{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.td-total{
+    font-size:30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.link-delete{
+    padding-top:5px;
+    display:flex;
+    justify-content: center;
+}
+
+.delete{
+    display:flex;
+    justify-content: center;
+    width: 30px;
+}
+
+.col-table{
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 30px 30px 8px rgba(0, 0, 0, 0.3)!important;
+}
+
+.clearCart{
+        font-family:'Montserrat', sans-serif;
+        font-size:18px;
+        color: rgb(255, 255, 255); 
+        text-decoration: none!important;
+        border: rgb(255, 255, 255);
+        margin-bottom: 20px;
+        transition: color 0.3s;
+        background-color:rgb(156, 115, 168);
+        padding:10px;
+        float: right;
+        border-radius:5px;
+        box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.4);
+}
+    
+.clearCart:hover{
+        color: rgb(156, 115, 168); 
+        background-color: rgb(241, 208, 240);
+        
+}
+
+

@@ -1,43 +1,21 @@
-.itemDetail{
 
-    min-height: 20vh!important;
-    min-width: 20vw!important;
-    text-align: center!important;
-    box-sizing: border-box;
-    margin-top: 50px;
-    margin-left: 20px;
-
-}
-
-.rowGlobalItemDetail {
-
-    padding-top: 100px!important;
-    display: block;
-    height: 100vh!important;
-    width: 100vw!important;
-    
-}
-
-.rowNumberProduct {
-
-    width: 200px;
-
-}
-
-.rowGlobalCount{ 
-    width: 100%;
-}
 .itemGlobal {
-
     padding-left: 50px!important;
     padding-right: 20px!important;
-    display: flex;
 }
 
+.col-total.row{
+    background-color: white;
+    display: flex;
+    border-radius: 20px;
+    height:100%;
+    padding: 20px 10px;
+    box-shadow: 30px 30px 8px rgba(0, 0, 0, 0.3)!important;
+}
 
-.itemBody{
-    border-color: none;
-    width: 50vw;
+.img.col-lg-6{
+    display: flex;
+    justify-content: center;
 }
 
 .btnTerminarCompra{
@@ -45,14 +23,52 @@
     background: rgb(241, 208, 240);
     color: black; 
     text-decoration: none!important;
-    border-color:violet ;
+    border-color:rgb(156, 115, 168) ;
 }
 
-.btnComprar {
-    background: rgb(241, 208, 240);
-    color: black; 
-    text-decoration: none!important;
-    border-color:violet;
-    margin-right: 20px;
-    margin-top: 20px;
+
+.card-text {
+    color: #585858;
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    margin-bottom:20px;
+    text-shadow: #e4e4e4 1px 3px 3px ;
 }
+
+.detail-subtitle{
+    padding-top: 10px;
+}
+
+.detail-available.card-title.h5{
+    font-family:'Montserrat', sans-serif;
+    padding-top:15px;
+    margin-bottom: 0px;
+    font-size:15px;
+}
+
+.detail-category.card-title.h5{
+    font-family:'Montserrat', sans-serif;
+    font-size: 20px!important;
+    color:#d4b5b6;
+}
+
+.detail-price.card-title.h5{
+    font-family:'Montserrat', sans-serif;
+    font-size:50px;
+    color:#d4b5b6;
+}
+
+.itemCount{
+    display: flex;
+    float: left;
+}
+
+.card-title.h5, .card-subtitle.h6 {
+    color: #585858;
+}
+
+.col-body.col-lg-6{
+    padding-top: 20px;
+}
+

@@ -14,8 +14,10 @@
 }
 
 .App-div {
-  background-color: #ffe7f5;
+  background-color: rgb(255, 184, 240);
+  background-image: url(./img/fondo.jpg);
   min-height: 100vh;
+  word-wrap: break-word;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -45,3 +47,4 @@
  
 
 }
+

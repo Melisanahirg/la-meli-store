@@ -1,10 +1,94 @@
 .btnVolveraInicio {
-    
-    background: rgb(241, 208, 240);
-    color: black; 
+    font-family:'Montserrat', sans-serif;
+    font-size:18px;
+    color: rgb(156, 115, 168); 
     text-decoration: none!important;
-    border-color:violet;
+    border: rgb(255, 255, 255);
     margin-right: 20px;
     margin-top: 20px;
+    transition: color 0.3s;
+    background-color: rgb(241, 208, 240);
+    padding:10px;
+    border-radius:5px;
+    box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.4);
+}
 
+.btnVolveraInicio:hover{
+    color: rgb(255, 255, 255); 
+    background-color:rgb(156, 115, 168);
+    
+}
+
+
+.col-cart-empty.col-lg-12{
+    display: flex;
+    justify-content: left;
+}
+
+.col2-cart-empty.col-lg-12{
+    display: flex;
+    justify-content: center;
+}
+
+.col-pay{
+    padding-top: 30px;
+    padding-bottom:50px;
+}
+
+.btnPay{
+    font-family:'Montserrat', sans-serif;
+    font-size:18px;
+    color: rgb(255, 255, 255); 
+    text-decoration: none!important;
+    border: rgb(255, 255, 255);
+    margin-right: 20px;
+    margin-top: 20px;
+    transition: color 0.3s;
+    background-color:rgb(156, 115, 168);
+    padding:10px;
+    width:100%;
+    border-radius:5px;
+    box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.4);
+}
+
+.btnPay:hover{
+    color: rgb(156, 115, 168); 
+    background-color: rgb(241, 208, 240);
+    
+}
+
+.modal-header{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.body-modal{
+    font-family: 'Lora', sans-serif;
+    font-size: 15px;
+}
+
+.form-label{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.btnClose{
+        font-family:'Montserrat', sans-serif;
+        font-size:18px;
+        color: rgb(156, 115, 168); 
+        text-decoration: none!important;
+        border: rgb(255, 255, 255);
+        margin-right: 20px;
+        margin-top: 20px;
+        transition: color 0.3s;
+        background-color: rgb(241, 208, 240);
+        padding:10px;
+        border-radius:5px;
+        box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.4);
+    }
+    
+    .btnClose:hover{
+        color: rgb(255, 255, 255); 
+        background-color:rgb(105, 105, 105);
+        
 }

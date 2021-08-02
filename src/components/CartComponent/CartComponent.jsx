@@ -1,8 +1,7 @@
 import { CartWidget } from "../CartWidget/CartWidget";
 import { useContext, useState } from "react";
 import { CartContext } from '../../context/CartContext'
-import { Button, Container, Row, Col, Modal, } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Button, Container, Row, Col, Modal, Image } from "react-bootstrap";
 import './CartComponent.css';
 import { Checkout } from '../Checkout/Checkout'
 
@@ -20,32 +19,35 @@ export function CartComponent() {
     return (
         <Container>
             <Row>
-                {cart.length == 0 ?
-                    <Col>
-                        <p>
-                            No hay productos en tu carrito
-                        </p>
-                        <Link to='/'>
-                            <Button className='btnVolveraInicio'>Volver al inicio</Button>
-                        </Link>
-                    </Col>
+                {cart.length === 0 ?
+                <Row>
+                    <Row>
+                        <Col lg={12} className='col-cart-empty'>
+                            <Button href='/' className='btnVolveraInicio'>Volver al inicio</Button>
+                        </Col>
+                    </Row>
+                        <Col lg={12} className='col2-cart-empty'>
+                            <Image src="../images/cart_empty.png"></Image>
+                        </Col>
+                </Row>
                     :
-                    <CartWidget removeItem={removeItem} product={product} />
+                    <Col lg={12}>
+                        <CartWidget removeItem={removeItem} product={product} />  
+                        <Col lg={12} className='col-pay'>
+                            <Button className='btnPay' onClick={handleShow}>Listo!</Button>
+                        </Col>
+                    </Col>
                 }
-                <Button variant="primary" onClick={handleShow}>
-                    Pagar
-                </Button>
                 <Modal show={show} onHide={handleClose}>
                     <Modal.Header>
-                        <Modal.Title>Checkout</Modal.Title>
+                        <Modal.Title>¡Solo un paso más!</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <Checkout/>
+                        <Modal.Title className='body-modal'>Estás por terminar tu compra, para ello necesitaremos que ingreses lo siguientes datos</Modal.Title>
+                        <Checkout handleClose={handleClose}/>
                     </Modal.Body>
                     <Modal.Footer>
-                        <Button variant="secondary" onClick={handleClose}>
-                            Cerrar
-                        </Button>
+                        <Button className='btnClose' onClick={handleClose}>Cerrar</Button>
                     </Modal.Footer>
                 </Modal>
             </Row>
